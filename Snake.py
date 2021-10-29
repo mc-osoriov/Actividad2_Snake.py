@@ -1,10 +1,20 @@
 from turtle import *
 from random import randrange
 from freegames import square, vector
+import random
 
 food = vector(0, 0)
 snake = [vector(10, 0)]
 aim = vector(0, -10)
+
+# Lista de colores, excepto el rojo.
+colors  = ["green","blue","orange","purple","yellow"] 
+# Determinado colores al azar para vibora y comida
+colorSnake = random.choice(colors)
+colorFood= random.choice(colors)
+# Evitando que la vibora y la comida tengan el mismo color
+if colorFood == colorSnake:
+    colorSnake = random.choice(colors)
 
 def change(x, y):
     "Change snake direction."
