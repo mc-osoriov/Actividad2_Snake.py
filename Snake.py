@@ -53,6 +53,17 @@ def move():
     update()
     ontimer(move, 100)
 
+def moveFood():
+    # Posiciones al azar para la comida 
+    food.x =+ randrange(-10,11,10)
+    food.y =+ randrange(-10,11,10)
+    # Mientras la comida no llegue al límite, se mueve
+    if not inside(food):
+        food.x = randrange(-15,15)*10
+        food.y= randrange(-15,15)*10
+    
+    ontimer(moveFood, 500)
+
 setup(420, 420, 370, 0)
 hideturtle()
 tracer(False)
