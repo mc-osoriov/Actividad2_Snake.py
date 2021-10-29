@@ -47,9 +47,9 @@ def move():
     clear()
 
     for body in snake:
-        square(body.x, body.y, 9, 'black')
+        square(body.x, body.y, 9, colorSnake) #asignación de color random
 
-    square(food.x, food.y, 9, 'green')
+    square(food.x, food.y, 9, colorFood) #asignación de color random
     update()
     ontimer(move, 100)
 
@@ -73,4 +73,5 @@ onkey(lambda: change(-10, 0), 'Left')
 onkey(lambda: change(0, 10), 'Up')
 onkey(lambda: change(0, -10), 'Down')
 move()
+moveFood() #llama a la función para mover la comida
 done()
